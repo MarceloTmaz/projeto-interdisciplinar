@@ -1,3 +1,3 @@
 # projeto-interdisciplinar
 
-# Coloque os arquivos do programa na pasta htdocs do xampp ou similar para executar o programa 
+# Coloque os arquivos do programa na pasta projeto1 detro htdocs do xampp ou similar para executar o programa 

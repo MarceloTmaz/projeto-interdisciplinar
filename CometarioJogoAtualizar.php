@@ -83,7 +83,7 @@
              <label class=" fs-5">Descrição: </label><br><!-- comment -->
              <input type="text" class="form-control" name="descicao" value="<?php echo $conteudo;?>"><br>
              <input type="number"  name="idCometario" value="<?php echo $idCometaio; ?>" hidden="true">
-             <input type="submit" class="btn btn-light name="ref" value="Atualizar">            
+             <input type="submit" class="btn btn-light "name="ref" value="Atualizar">            
         </form>
     </body>
 </html>

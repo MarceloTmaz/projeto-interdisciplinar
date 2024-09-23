@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`jogos` (
   `descricao` VARCHAR(45) NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idjogos`),
-  INDEX `fk_jogos_usuario_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_jogos_usuario_idx` (`idusuario` ASC),
   CONSTRAINT `fk_jogos_usuario`
     FOREIGN KEY (`idusuario`)
     REFERENCES `ProjentoInter`.`usuario` (`idusuario`)
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`categoria` (
   `nome` VARCHAR(45) NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idcategoria`),
-  INDEX `fk_categoria_usuario1_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_categoria_usuario1_idx` (`idusuario` ASC) ,
   CONSTRAINT `fk_categoria_usuario1`
     FOREIGN KEY (`idusuario`)
     REFERENCES `ProjentoInter`.`usuario` (`idusuario`)
@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`noticia` (
   `idcategoria` INT NOT NULL,
   `idjogos` INT NOT NULL,
   PRIMARY KEY (`idnoticia`),
-  INDEX `fk_noticia_usuario1_idx` (`idusuario` ASC) VISIBLE,
-  INDEX `fk_noticia_categoria1_idx` (`idcategoria` ASC) VISIBLE,
-  INDEX `fk_noticia_jogos1_idx` (`idjogos` ASC) VISIBLE,
+  INDEX `fk_noticia_usuario1_idx` (`idusuario` ASC) ,
+  INDEX `fk_noticia_categoria1_idx` (`idcategoria` ASC) ,
+  INDEX `fk_noticia_jogos1_idx` (`idjogos` ASC) ,
   CONSTRAINT `fk_noticia_usuario1`
     FOREIGN KEY (`idusuario`)
     REFERENCES `ProjentoInter`.`usuario` (`idusuario`)
@@ -104,8 +104,8 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`favoritos` (
   `idusuario` INT NOT NULL,
   `idjogos` INT NOT NULL,
   PRIMARY KEY (`idusuario`, `idjogos`),
-  INDEX `fk_usuario_has_jogos_jogos1_idx` (`idjogos` ASC) VISIBLE,
-  INDEX `fk_usuario_has_jogos_usuario1_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_usuario_has_jogos_jogos1_idx` (`idjogos` ASC) ,
+  INDEX `fk_usuario_has_jogos_usuario1_idx` (`idusuario` ASC) ,
   CONSTRAINT `fk_usuario_has_jogos_usuario1`
     FOREIGN KEY (`idusuario`)
     REFERENCES `ProjentoInter`.`usuario` (`idusuario`)
@@ -128,8 +128,8 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`cometariojogos` (
   `idjogos` INT NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idcometariojogos`),
-  INDEX `fk_cometariojogos_jogos1_idx` (`idjogos` ASC) VISIBLE,
-  INDEX `fk_cometariojogos_usuario1_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_cometariojogos_jogos1_idx` (`idjogos` ASC) ,
+  INDEX `fk_cometariojogos_usuario1_idx` (`idusuario` ASC) ,
   CONSTRAINT `fk_cometariojogos_jogos1`
     FOREIGN KEY (`idjogos`)
     REFERENCES `ProjentoInter`.`jogos` (`idjogos`)
@@ -152,8 +152,8 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`cometarionoticia` (
   `idnoticia` INT NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idcometarionoticia`),
-  INDEX `fk_cometarionoticia_noticia1_idx` (`idnoticia` ASC) VISIBLE,
-  INDEX `fk_cometarionoticia_usuario1_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_cometarionoticia_noticia1_idx` (`idnoticia` ASC) ,
+  INDEX `fk_cometarionoticia_usuario1_idx` (`idusuario` ASC) ,
   CONSTRAINT `fk_cometarionoticia_noticia1`
     FOREIGN KEY (`idnoticia`)
     REFERENCES `ProjentoInter`.`noticia` (`idnoticia`)
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `ProjentoInter`.`evento` (
   `descricao` VARCHAR(45) NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idevento`),
-  INDEX `fk_evento_usuario1_idx` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_evento_usuario1_idx` (`idusuario` ASC) ,
   CONSTRAINT `fk_evento_usuario1`
     FOREIGN KEY (`idusuario`)
     REFERENCES `ProjentoInter`.`usuario` (`idusuario`)
